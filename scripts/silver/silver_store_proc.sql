@@ -36,15 +36,21 @@ INSERT INTO silver.carprices(
 SELECT
     yr,
     UPPER(TRIM(make)) as make,
-    model,
+    UPPER(TRIM(model)) as model,
     UPPER(TRIM(trm)) as trm,
-    body,
-    transmission,
+    UPPER(TRIM(body)) as body,
+    UPPER(TRIM(transmission)) as transmission,
     vin,
-    ste,
+    CASE
+        WHEN LEN(ste) > 2 THEN NULL  
+        ELSE UPPER(ste)             
+    END AS ste,
     condition,
     odometer,
-    color,
+    CASE
+        WHEN TRY_CAST(color AS INT) IS NOT NULL THEN NULL
+        ELSE color
+    END AS color,
     UPPER(TRIM(interior)) as interior,
     UPPER(TRIM(seller)) as seller,
     mmr,
@@ -54,12 +60,15 @@ SELECT
             TRY_CONVERT(DATE, SUBSTRING(saledate, 5, CHARINDEX(' GMT', saledate) - 5))
         ELSE
             NULL
-    END AS saledate -- Calculates the FormatedSaleDate from the bronze saledate
+    END AS saledate -- Calculates the Formated SaleDate from the bronze saledate
 FROM
     bronze.carprices;
 
-select *
-from silver.carprices
-where make is null
+
+
 -- inserted data removed columns with null make
 -- further cleaning is needed to normalize data and remove other null values and duplicates
+
+TRUNCATE TABLE silver.carprices
+go
+
