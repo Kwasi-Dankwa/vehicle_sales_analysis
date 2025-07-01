@@ -121,3 +121,38 @@ select vin, count(*)
 from silver.carprices
 group by vin
 having count(*) > 1
+
+
+-- deleting duplicates  --
+
+USE CARDB; -- Ensure you are in the correct database
+GO
+
+
+--cte to rank duplicates --
+WITH DuplicateRecords AS (
+    SELECT
+        *, 
+        ROW_NUMBER() OVER (
+            PARTITION BY vin
+            ORDER BY
+                saledate DESC,
+                (SELECT NULL) 
+        ) AS flag_last
+    FROM
+        silver.carprices
+)
+
+
+
+
+-- This will delete all rows for a given VIN except for the one with flag_last = 1.
+DELETE FROM silver.carprices
+WHERE EXISTS (
+    SELECT 1
+    FROM DuplicateRecords dr
+    WHERE dr.vin = silver.carprices.vin
+      AND dr.saledate = silver.carprices.saledate 
+      AND dr.flag_last > 1
+);
+GO
