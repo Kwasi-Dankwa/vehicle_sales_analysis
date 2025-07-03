@@ -12,14 +12,18 @@ Script Purpose:
 Usage:
     - These views can be queried directly for analytics and reporting.
 ===============================================================================
-*/
+*/ -- Star Schema
+-- Fact Table: gold.fact_car_sales
+
+-- Dimensions: gold.dim_vehicle, gold.dim_seller, gold.dim_date
 
 -- =============================================================================
--- Create Dimension: 
+
 -- =============================================================================
 USE CARDB
 go
 
+-- This dimension describes a unique vehicle (by VIN). Includes make, model, trim, etc.
 IF OBJECT_ID('gold.dim_vehicle', 'V') IS NOT NULL
     DROP VIEW gold.dim_vehicle;
 GO
@@ -47,6 +51,7 @@ WHERE rn = 1;
 GO
 
 
+-- This groups sellers to a surrogate key. One row per unique seller name.
 IF OBJECT_ID('gold.dim_seller', 'V') IS NOT NULL
     DROP VIEW gold.dim_seller;
 GO
@@ -62,7 +67,7 @@ FROM (
 ) sellers;
 GO
 
-
+-- A standard calendar dimension for time-series analytics
 IF OBJECT_ID('gold.dim_date', 'V') IS NOT NULL
     DROP VIEW gold.dim_date;
 GO
@@ -83,7 +88,7 @@ FROM (
 ) dates;
 GO
 
-
+-- This fact table links to the three dimensions and includes price metrics
 IF OBJECT_ID('gold.fact_car_sales', 'V') IS NOT NULL
     DROP VIEW gold.fact_car_sales;
 GO
@@ -93,7 +98,7 @@ SELECT
     v.vehicle_key,
     s.seller_key,
     d.date_key,
-    
+    --kpis
     cp.sellingprice,
     cp.mmr,
     cp.sellingprice - cp.mmr AS price_diff_from_mmr,
