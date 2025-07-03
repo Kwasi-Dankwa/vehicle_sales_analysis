@@ -15,6 +15,9 @@ Condition & Usage: Odometer Reading, Condition Rating
 Market Value: Manheim Market Report (MMR) Values
 
 ## 🧱 Data Warehouse Architecture
+
+### Medallion Architecture
+
 ### 🏗️ Schema Design: Star Schema for Car Pricing
 
 Fact Table:
