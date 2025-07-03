@@ -4,7 +4,7 @@
 This project involves the design and implementation of a data warehouse using SQL Server Management Studio (SSMS), based on a comprehensive Vehicle Sales and Market Trends Dataset. The data warehouse facilitates efficient querying, reporting, and analytical processing of vehicle sales, pricing trends, and market behavior.
 
 ## 🗃️ Dataset Description
-The source [`dataset`] (https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data) includes detailed vehicle sales transactions with the following fields:
+The source [`dataset`](https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data) includes detailed vehicle sales transactions with the following fields:
 
 Vehicle Attributes: Year, Make, Model, Trim, Body Type, Transmission, Exterior/Interior Color, VIN
 
