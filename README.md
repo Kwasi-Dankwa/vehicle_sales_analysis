@@ -48,7 +48,7 @@ Dimensions:
 
 ## ⚙️ ETL Process
 1. Extract
-Raw CSV data loaded using SSMS or SQL Server Integration Services (SSIS)
+Raw CSV data loaded using SSMS.
 
 2. Transform
 Data cleaning: deduplication, type casting, NULL handling
