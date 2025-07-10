@@ -1,7 +1,7 @@
 # Vehicle Sales Data Warehouse Project
 
 ## 📌 Project Overview
-This project involves the design and implementation of a data warehouse using SQL Server Management Studio (SSMS), based on a comprehensive Vehicle Sales and Market Trends Dataset. The data warehouse facilitates efficient querying, reporting, and analytical processing of vehicle sales, pricing trends, and market behavior.
+This project involves the design and implementation of a data warehouse using SQL Server Management Studio (SSMS), based on a comprehensive Vehicle Sales and Market Trends Dataset. The purpose of this data warehouse is to consolidate, organize, and optimize vehicle sales data from to support data-driven decision-making across sales, operations, and business strategy. It enables historical analysis, trend forecasting, and performance benchmarking related to vehicle sales, sellers, pricing, and market value (MMR) primarily especially for Auto insurers who may use vehicle condition, age, and sales data to improve claims valuation or adjust premiums based on real-world resale value trends.
 
 ## 🗃️ Dataset Description
 The source [`dataset`](https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data) includes detailed vehicle sales transactions with the following fields:
