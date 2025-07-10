@@ -41,6 +41,11 @@ Dimensions:
 
 * gold.dim_date
 
+#### Relationship
+
+![Relationship](assets/starschema.png "Relationship")
+
+
 ## ⚙️ ETL Process
 1. Extract
 Raw CSV data loaded using SSMS or SQL Server Integration Services (SSIS)
