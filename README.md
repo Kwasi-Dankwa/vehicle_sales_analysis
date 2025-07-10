@@ -47,19 +47,27 @@ Dimensions:
 
 
 ## ⚙️ ETL Process
+The ETL (Extract, Transform, Load) process is responsible for ingesting raw vehicle sales data from kaggle, transforming it into a clean, consistent format, and loading it into the star schema of the data warehouse. This process ensures the data is reliable, timely, and optimized for analysis.
+
 1. Extract
 Raw CSV data loaded using SSMS.
 
 2. Transform
-Data cleaning: deduplication, type casting, NULL handling
+Raw data undergoes several transformation steps before being loaded into dimensional tables:
 
-Dimension normalization: distinct values loaded into dimension tables
+## Transformations (Silver Layer)
+Data Cleaning	Remove duplicates VINs, null VINs, and invalid sale dates. This was done since VIN was the primary key.
 
-Surrogate key creation for dimensions
+Standardization	Normalize fields through capitalization (e.g., vehicle color, transmission type)
+Surrogate Key Assignment	Assign vehicle_key, seller_key, and date_key for consistency
+Calculated Metrics (for Gold Layer)	Compute price_diff_from_mmr and price_to_mmr_ratio
+Date Enrichment (Gold Layer)	Derive year, month, day, and quarter from sale date
+Data Type Conversion	Convert fields into appropriate SQL data types for loading
+
+Business rules were applied to ensure consistency across vehicle records and to handle outliers (e.g., negative odometer readings or extreme price values).
 
 3. Load
 Transformed data loaded into fact and dimension tables
-
-Referential integrity enforced using foreign keys
+Referential integrity enforced using foreign keys.
 
 
