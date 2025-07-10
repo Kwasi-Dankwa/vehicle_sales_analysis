@@ -57,7 +57,6 @@ Raw data undergoes several transformation steps before being loaded into dimensi
 
 ## Transformations (Silver Layer)
 Data Cleaning	Remove duplicates VINs, null VINs, and invalid sale dates. This was done since VIN was the primary key.
-
 Standardization	Normalize fields through capitalization (e.g., vehicle color, transmission type)
 Surrogate Key Assignment	Assign vehicle_key, seller_key, and date_key for consistency
 Calculated Metrics (for Gold Layer)	Compute price_diff_from_mmr and price_to_mmr_ratio
