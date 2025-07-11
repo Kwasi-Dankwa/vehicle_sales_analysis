@@ -92,17 +92,81 @@ END;
 > This stored procedure, bronze.load_bronze, loads raw car pricing data into the bronze.carprices table as part of the ETL pipeline. It begins by logging the start time, truncating the existing data in the target table, and then performing a BULK INSERT from a local CSV file. The process includes basic logging for traceability and is wrapped in a TRY-CATCH block to handle errors.
 
 2. Transform
-Raw data undergoes several transformation steps before being loaded into dimensional tables:
+Raw data undergoes several transformation steps before being loaded into the gold schema to create dimensional and fact tables:
 
-Transformations (Silver Layer)
-* Data Cleaning.	Remove duplicates VINs, null VINs, and invalid sale dates. This was done since VIN was the primary key. Additionally duplicate VIN values were filtered by keeping the most recent sale date
-  
+```
+--load--
+INSERT INTO silver.carprices(
+    yr,
+    make,
+    model,
+    trm,
+    body,
+    transmission,
+    vin,
+    ste,
+    condition,
+    odometer,
+    color,
+    interior,
+    seller,
+    mmr,
+    sellingprice,
+    saledate            -- This will receive the original nvarchar(max) saledate from bronze
+)
 
-Standardization	Normalize fields through capitalization (e.g., vehicle color, transmission type)
-Surrogate Key Assignment	Assign vehicle_key, seller_key, and date_key for consistency
-Calculated Metrics (for Gold Layer)	Compute price_diff_from_mmr and price_to_mmr_ratio
-Date Enrichment (Gold Layer)	Derive year, month, day, and quarter from sale date
-Data Type Conversion	Convert fields into appropriate SQL data types for loading
+SELECT
+    yr,
+    UPPER(TRIM(make)) as make,
+    UPPER(TRIM(model)) as model,
+    UPPER(TRIM(trm)) as trm,
+    UPPER(TRIM(body)) as body,
+    UPPER(TRIM(transmission)) as transmission,
+    vin,
+    CASE
+        WHEN LEN(ste) > 2 THEN NULL  
+        ELSE UPPER(ste)             
+    END AS ste,
+    condition,
+    odometer,
+    CASE
+        WHEN TRY_CAST(color AS INT) IS NOT NULL THEN NULL
+        ELSE color
+    END AS color,
+    UPPER(TRIM(interior)) as interior,
+    UPPER(TRIM(seller)) as seller,
+    mmr,
+    sellingprice,
+    CASE
+        WHEN saledate IS NOT NULL AND CHARINDEX(' GMT', saledate) > 4 THEN
+            TRY_CONVERT(DATE, SUBSTRING(saledate, 5, CHARINDEX(' GMT', saledate) - 5))
+        ELSE
+            NULL
+    END AS saledate -- Calculates the Formated SaleDate from the bronze saledate
+FROM
+    bronze.carprices;
+```
+
+> Transformations (Silver Layer)
+Data Cleaning.	Remove duplicates VINs, null VINs, and invalid sale dates. This was done since VIN was the primary key. Additionally duplicate VIN values were filtered by keeping the most recent sale date. Additionally, Values in certain columns  were Standardized and Normalized through capitalization (e.g., vehicle color, transmission type)
+
+
+The Gold Layer 🟡 represents the final and business-ready schema in the data warehouse, modeled using a star schema. This [`script`]("https://github.com/Kwasi-Dankwa/vehicle_sales_analysis/blob/main/scripts/gold/goldddl.sql") creates four SQL views—three dimension views (dim_vehicle, dim_seller, dim_date) and one fact view (fact_car_sales)—by transforming and cleaning data from the Silver Layer.
+
+* dim_vehicle: Deduplicates vehicles by VIN and keeps only the latest record per vehicle.
+
+* dim_seller: Assigns a unique key to each distinct seller.
+
+* dim_date: Generates a date dimension from unique sale dates for time-based analysis.
+
+* fact_car_sales: Links all three dimensions and calculates key metrics such as price difference from MMR and price-to-MMR ratio.
+
+These views serve as the final output layer, optimized for analytics, reporting, and dashboarding.
+
+> Surrogate Key Assignment,	Assign vehicle_key, seller_key, and date_key for consistency,
+Calculated Metrics (for Gold Layer) are created to store price_diff_from_mmr and price_to_mmr_ratio,
+Date Enrichment (Gold Layer) to	Derive year, month, day, and quarter from sale date,
+Data Type Conversion is also carried to Convert fields into appropriate SQL data types for loading
 
 Business rules were applied to ensure consistency across vehicle records and to handle outliers (e.g., negative odometer readings or extreme price values).
 
