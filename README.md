@@ -45,6 +45,10 @@ Dimensions:
 
 ![Relationship](assets/starschema.png "Relationship")
 
+## 🧰 Technologies Used
+* SQL (Microsoft SQL Server)
+* Storage & compute (local, cloud, etc.)
+
 
 ## ⚙️ ETL Process
 The ETL (Extract, Transform, Load) process is responsible for ingesting raw vehicle sales data from kaggle, transforming it into a clean, consistent format, and loading it into the star schema of the data warehouse. This process ensures the data is reliable, timely, and optimized for analysis.
@@ -151,7 +155,7 @@ FROM
 Data Cleaning.	Remove duplicates VINs, null VINs, and invalid sale dates. This was done since VIN was the primary key. Additionally duplicate VIN values were filtered by keeping the most recent sale date. Additionally, Values in certain columns  were Standardized and Normalized through capitalization (e.g., vehicle color, transmission type)
 
 
-The Gold Layer 🟡 represents the final and business-ready schema in the data warehouse, modeled using a star schema. This [`script`]("https://github.com/Kwasi-Dankwa/vehicle_sales_analysis/blob/main/scripts/gold/goldddl.sql") creates four SQL views—three dimension views (dim_vehicle, dim_seller, dim_date) and one fact view (fact_car_sales)—by transforming and cleaning data from the Silver Layer.
+The Gold Layer 🟡 represents the final and business-ready schema in the data warehouse, modeled using a star schema. This [`script`](https://github.com/Kwasi-Dankwa/vehicle_sales_analysis/blob/main/scripts/gold/goldddl.sql) creates four SQL views—three dimension views (dim_vehicle, dim_seller, dim_date) and one fact view (fact_car_sales)—by transforming and cleaning data from the Silver Layer.
 
 * dim_vehicle: Deduplicates vehicles by VIN and keeps only the latest record per vehicle.
 
@@ -171,7 +175,14 @@ Data Type Conversion is also carried to Convert fields into appropriate SQL data
 Business rules were applied to ensure consistency across vehicle records and to handle outliers (e.g., negative odometer readings or extreme price values).
 
 3. Load
-Transformed data loaded into fact and dimension tables
+Transformed data loaded into fact and dimension tables.
+> Script: [`script`](https://github.com/Kwasi-Dankwa/vehicle_sales_analysis/blob/main/scripts/gold/goldddl.sql)
 Referential integrity enforced using foreign keys.
+
+## 🚀 Future Improvements
+* Automate ETL
+* Adding more dimensions (e.g., buyers, location)
+* Conducting Advanced Analytics and Setting up dashboarding
+* Incorporate real-time data
 
 
