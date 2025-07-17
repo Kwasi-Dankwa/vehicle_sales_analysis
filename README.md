@@ -180,7 +180,7 @@ Transformed data loaded into fact and dimension tables.
 Referential integrity enforced using foreign keys.
 
 ## 🚀 Future Improvements
-* Automate ETL
+* Automate ETL using additional tools such as snowflake and dbt
 * Adding more dimensions (e.g., buyers, location)
 * Conducting Advanced Analytics and Setting up dashboarding
 * Incorporate real-time data
