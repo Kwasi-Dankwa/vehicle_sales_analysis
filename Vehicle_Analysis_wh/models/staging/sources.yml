@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: cardb # This name matches the first argument in source('cardb', 'car_sales')
+    database: CARDB # The actual database name in Snowflake (often uppercase)
+    schema: PUBLIC # <--- CHANGE THIS FROM CAR_SCHEMA TO PUBLIC
+    tables:
+      - name: car_sales # This name matches the second argument in source('cardb', 'car_sales')
+        identifier: CAR_SALES # The actual table name in Snowflake (optional, but good for clarity if it differs from the 'name')
+
+
