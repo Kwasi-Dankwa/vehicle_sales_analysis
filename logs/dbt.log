@@ -1,0 +1,216 @@
+[0m14:31:42.947801 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012F802F7A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012FFE311BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012F816DFC50>]}
+
+
+============================== 14:31:42.961172 | 86e99e75-5bdf-43c3-9f31-0bbbc151bef1 ==============================
+[0m14:31:42.961172 [info ] [MainThread]: Running with dbt=1.10.4
+[0m14:31:42.962370 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\kdank\\.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt init snowflake-dbt', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:32:16.765304 [debug] [MainThread]: Starter project path: C:\Users\kdank\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m14:32:16.972820 [info ] [MainThread]: 
+Your new dbt project "Vehicle_Analysis_wh" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:32:16.980174 [info ] [MainThread]: Setting up your profile.
+[0m14:42:25.144034 [info ] [MainThread]: Profile Vehicle_Analysis_wh written to C:\Users\kdank\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:42:25.462658 [debug] [MainThread]: Command `dbt init` succeeded at 14:42:25.450294 after 642.93 seconds
+[0m14:42:25.503030 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012F83649480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012F8274A8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012F8367C160>]}
+[0m14:42:25.538361 [debug] [MainThread]: Flushing usage events
+[0m14:42:26.171165 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:42:41.949950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259AC287A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259AA2F1BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259AD66FC50>]}
+
+
+============================== 14:42:41.961932 | 856b3596-b433-4860-8fec-d83b62404c03 ==============================
+[0m14:42:41.961932 [info ] [MainThread]: Running with dbt=1.10.4
+[0m14:42:41.963144 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\kdank\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:42:42.042283 [info ] [MainThread]: dbt version: 1.10.4
+[0m14:42:42.043382 [info ] [MainThread]: python version: 3.13.5
+[0m14:42:42.044593 [info ] [MainThread]: python path: C:\Users\kdank\AppData\Local\Programs\Python\Python313\python.exe
+[0m14:42:42.045899 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m14:42:43.587496 [info ] [MainThread]: Using profiles dir at C:\Users\kdank\.dbt
+[0m14:42:43.589609 [info ] [MainThread]: Using profiles.yml file at C:\Users\kdank\.dbt\profiles.yml
+[0m14:42:43.592452 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\kdank\OneDrive\Desktop\vehicle_sales_analysis\dbt_project.yml
+[0m14:42:43.594873 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m14:42:43.600085 [debug] [MainThread]: Command `dbt debug` failed at 14:42:43.599797 after 2.01 seconds
+[0m14:42:43.600787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259AF5CB230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259AF63C5F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259AF5F0490>]}
+[0m14:42:43.601425 [debug] [MainThread]: Flushing usage events
+[0m14:42:43.749763 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:56:22.516747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A542CD7A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A540D3DBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A5440BFC50>]}
+
+
+============================== 14:56:22.533874 | 307f278c-c2e7-474a-a722-6e70a6f40c42 ==============================
+[0m14:56:22.533874 [info ] [MainThread]: Running with dbt=1.10.4
+[0m14:56:22.536357 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\kdank\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:56:22.648072 [info ] [MainThread]: dbt version: 1.10.4
+[0m14:56:22.649504 [info ] [MainThread]: python version: 3.13.5
+[0m14:56:22.651898 [info ] [MainThread]: python path: C:\Users\kdank\AppData\Local\Programs\Python\Python313\python.exe
+[0m14:56:22.654113 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m14:56:24.609621 [info ] [MainThread]: Using profiles dir at C:\Users\kdank\.dbt
+[0m14:56:24.611726 [info ] [MainThread]: Using profiles.yml file at C:\Users\kdank\.dbt\profiles.yml
+[0m14:56:24.613434 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\kdank\OneDrive\Desktop\vehicle_sales_analysis\dbt_project.yml
+[0m14:56:24.614877 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m14:56:24.620842 [debug] [MainThread]: Command `dbt debug` failed at 14:56:24.620526 after 2.49 seconds
+[0m14:56:24.621950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A54601F230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A54608C5F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A546040490>]}
+[0m14:56:24.628787 [debug] [MainThread]: Flushing usage events
+[0m14:56:24.952523 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:57:15.681152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ED259C7A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ED23A2DBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ED27D93C50>]}
+
+
+============================== 14:57:15.690074 | 8bd6ba33-7661-4417-af66-86ec22bda43f ==============================
+[0m14:57:15.690074 [info ] [MainThread]: Running with dbt=1.10.4
+[0m14:57:15.691690 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\kdank\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:57:15.743457 [info ] [MainThread]: dbt version: 1.10.4
+[0m14:57:15.744962 [info ] [MainThread]: python version: 3.13.5
+[0m14:57:15.746221 [info ] [MainThread]: python path: C:\Users\kdank\AppData\Local\Programs\Python\Python313\python.exe
+[0m14:57:15.747440 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m14:57:16.720542 [info ] [MainThread]: Using profiles dir at C:\Users\kdank\.dbt
+[0m14:57:16.723012 [info ] [MainThread]: Using profiles.yml file at C:\Users\kdank\.dbt\profiles.yml
+[0m14:57:16.725604 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\kdank\OneDrive\Desktop\vehicle_sales_analysis\dbt_project.yml
+[0m14:57:16.744340 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m14:57:16.749191 [debug] [MainThread]: Command `dbt debug` failed at 14:57:16.748911 after 1.46 seconds
+[0m14:57:16.750234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ED28D4B230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ED28DBC5F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002ED28D70490>]}
+[0m14:57:16.751210 [debug] [MainThread]: Flushing usage events
+[0m14:57:16.888647 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:01:34.534581 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F68887A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F668F1BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F6AC43C50>]}
+
+
+============================== 15:01:34.549596 | 7db74ae8-5c4f-4c15-a217-4c171fa4e37a ==============================
+[0m15:01:34.549596 [info ] [MainThread]: Running with dbt=1.10.4
+[0m15:01:34.551250 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\kdank\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:01:34.635855 [info ] [MainThread]: dbt version: 1.10.4
+[0m15:01:34.636833 [info ] [MainThread]: python version: 3.13.5
+[0m15:01:34.638377 [info ] [MainThread]: python path: C:\Users\kdank\AppData\Local\Programs\Python\Python313\python.exe
+[0m15:01:34.639221 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m15:01:36.033009 [info ] [MainThread]: Using profiles dir at C:\Users\kdank\.dbt
+[0m15:01:36.034157 [info ] [MainThread]: Using profiles.yml file at C:\Users\kdank\.dbt\profiles.yml
+[0m15:01:36.035063 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\kdank\OneDrive\Desktop\vehicle_sales_analysis\dbt_project.yml
+[0m15:01:36.039187 [info ] [MainThread]: adapter type: snowflake
+[0m15:01:36.040117 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:01:36.041007 [info ] [MainThread]: Configuration:
+[0m15:01:36.041837 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:01:36.045446 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m15:01:36.049154 [info ] [MainThread]: Required dependencies:
+[0m15:01:36.050081 [debug] [MainThread]: Executing "git --help"
+[0m15:01:36.232230 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:01:36.233073 [debug] [MainThread]: STDERR: "b''"
+[0m15:01:36.233798 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:01:36.235739 [info ] [MainThread]: Connection:
+[0m15:01:36.237059 [info ] [MainThread]:   account: VXPQPBU-WE34741
+[0m15:01:36.237961 [info ] [MainThread]:   user: KWASIDANKWA
+[0m15:01:36.238606 [info ] [MainThread]:   database: cardb
+[0m15:01:36.239301 [info ] [MainThread]:   warehouse: compute_wh
+[0m15:01:36.240009 [info ] [MainThread]:   role: accountadmin
+[0m15:01:36.241074 [info ] [MainThread]:   schema: car_schema
+[0m15:01:36.241836 [info ] [MainThread]:   authenticator: None
+[0m15:01:36.244665 [info ] [MainThread]:   oauth_client_id: None
+[0m15:01:36.246510 [info ] [MainThread]:   query_tag: None
+[0m15:01:36.247803 [info ] [MainThread]:   client_session_keep_alive: False
+[0m15:01:36.256700 [info ] [MainThread]:   host: None
+[0m15:01:36.258636 [info ] [MainThread]:   port: None
+[0m15:01:36.259741 [info ] [MainThread]:   proxy_host: None
+[0m15:01:36.264237 [info ] [MainThread]:   proxy_port: None
+[0m15:01:36.266067 [info ] [MainThread]:   protocol: None
+[0m15:01:36.267517 [info ] [MainThread]:   connect_retries: 1
+[0m15:01:36.268514 [info ] [MainThread]:   connect_timeout: None
+[0m15:01:36.270194 [info ] [MainThread]:   retry_on_database_errors: False
+[0m15:01:36.279835 [info ] [MainThread]:   retry_all: False
+[0m15:01:36.283013 [info ] [MainThread]:   insecure_mode: False
+[0m15:01:36.289367 [info ] [MainThread]:   reuse_connections: True
+[0m15:01:36.291243 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m15:01:36.294106 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m15:01:38.198571 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m15:01:43.660260 [debug] [MainThread]: Using snowflake connection "debug"
+[0m15:01:43.660969 [debug] [MainThread]: On debug: select 1 as id
+[0m15:01:43.661443 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:01:48.372274 [debug] [MainThread]: SQL status: SUCCESS 1 in 4.710 seconds
+[0m15:01:48.378550 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:01:48.380408 [info ] [MainThread]: [31m1 check failed:[0m
+[0m15:01:48.383475 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\kdank\OneDrive\Desktop\vehicle_sales_analysis\dbt_project.yml> not found
+
+[0m15:01:48.386058 [debug] [MainThread]: Command `dbt debug` failed at 15:01:48.385710 after 14.20 seconds
+[0m15:01:48.386782 [debug] [MainThread]: Connection 'debug' was left open.
+[0m15:01:48.387297 [debug] [MainThread]: On debug: Close
+[0m15:01:48.459242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F6BF54B00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F6BC3E450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019F6BBF0490>]}
+[0m15:01:48.460017 [debug] [MainThread]: Flushing usage events
+[0m15:01:48.659027 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:03:17.044698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A493877A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4918E1BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A494C63C50>]}
+
+
+============================== 15:03:17.053537 | 81517d90-4cbc-43d3-af8a-372f249bc5f8 ==============================
+[0m15:03:17.053537 [info ] [MainThread]: Running with dbt=1.10.4
+[0m15:03:17.055795 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\kdank\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\kdank\\OneDrive\\Desktop\\vehicle_sales_analysis\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:03:17.106641 [info ] [MainThread]: dbt version: 1.10.4
+[0m15:03:17.113543 [info ] [MainThread]: python version: 3.13.5
+[0m15:03:17.119587 [info ] [MainThread]: python path: C:\Users\kdank\AppData\Local\Programs\Python\Python313\python.exe
+[0m15:03:17.122347 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m15:03:18.109812 [info ] [MainThread]: Using profiles dir at C:\Users\kdank\.dbt
+[0m15:03:18.111004 [info ] [MainThread]: Using profiles.yml file at C:\Users\kdank\.dbt\profiles.yml
+[0m15:03:18.112154 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\kdank\OneDrive\Desktop\vehicle_sales_analysis\dbt_project.yml
+[0m15:03:18.114532 [info ] [MainThread]: adapter type: snowflake
+[0m15:03:18.115481 [info ] [MainThread]: adapter version: 1.10.0
+[0m15:03:18.399426 [info ] [MainThread]: Configuration:
+[0m15:03:18.471236 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:03:18.525807 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:03:18.527213 [info ] [MainThread]: Required dependencies:
+[0m15:03:18.528575 [debug] [MainThread]: Executing "git --help"
+[0m15:03:18.643354 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:03:18.644084 [debug] [MainThread]: STDERR: "b''"
+[0m15:03:18.644674 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:03:18.645533 [info ] [MainThread]: Connection:
+[0m15:03:18.646457 [info ] [MainThread]:   account: VXPQPBU-WE34741
+[0m15:03:18.647395 [info ] [MainThread]:   user: KWASIDANKWA
+[0m15:03:18.648634 [info ] [MainThread]:   database: cardb
+[0m15:03:18.649427 [info ] [MainThread]:   warehouse: compute_wh
+[0m15:03:18.650210 [info ] [MainThread]:   role: accountadmin
+[0m15:03:18.650960 [info ] [MainThread]:   schema: car_schema
+[0m15:03:18.653436 [info ] [MainThread]:   authenticator: None
+[0m15:03:18.655975 [info ] [MainThread]:   oauth_client_id: None
+[0m15:03:18.661365 [info ] [MainThread]:   query_tag: None
+[0m15:03:18.664358 [info ] [MainThread]:   client_session_keep_alive: False
+[0m15:03:18.666178 [info ] [MainThread]:   host: None
+[0m15:03:18.670532 [info ] [MainThread]:   port: None
+[0m15:03:18.672324 [info ] [MainThread]:   proxy_host: None
+[0m15:03:18.674159 [info ] [MainThread]:   proxy_port: None
+[0m15:03:18.675533 [info ] [MainThread]:   protocol: None
+[0m15:03:18.676391 [info ] [MainThread]:   connect_retries: 1
+[0m15:03:18.677179 [info ] [MainThread]:   connect_timeout: None
+[0m15:03:18.677959 [info ] [MainThread]:   retry_on_database_errors: False
+[0m15:03:18.678735 [info ] [MainThread]:   retry_all: False
+[0m15:03:18.680630 [info ] [MainThread]:   insecure_mode: False
+[0m15:03:18.684982 [info ] [MainThread]:   reuse_connections: True
+[0m15:03:18.686348 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m15:03:18.689153 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m15:03:19.374647 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m15:03:19.515152 [debug] [MainThread]: Using snowflake connection "debug"
+[0m15:03:19.515819 [debug] [MainThread]: On debug: select 1 as id
+[0m15:03:19.516319 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:03:20.178443 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.662 seconds
+[0m15:03:20.183449 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:03:20.187386 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:03:20.194105 [debug] [MainThread]: Command `dbt debug` succeeded at 15:03:20.193254 after 3.38 seconds
+[0m15:03:20.196523 [debug] [MainThread]: Connection 'debug' was left open.
+[0m15:03:20.198769 [debug] [MainThread]: On debug: Close
+[0m15:03:20.278899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A497024FC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A496D39FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A496C105A0>]}
+[0m15:03:20.279745 [debug] [MainThread]: Flushing usage events
+[0m15:03:20.398749 [debug] [MainThread]: An error was encountered while trying to flush usage events
