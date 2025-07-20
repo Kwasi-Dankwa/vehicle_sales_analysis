@@ -13,11 +13,12 @@ final AS (
         -- Generate a date key (e.g., YYYYMMDD)
         CAST(REPLACE(CAST(saledate AS DATE), '-', '') AS BIGINT) AS date_key,
         saledate AS sale_date,
-        YEAR(saledate) AS year,
-        MONTH(saledate) AS month,
-        DAY(saledate) AS day,
-        MONTHNAME(saledate) AS month_name,
-        QUARTER(saledate) AS quarter
+        -- Explicitly cast saledate to DATE type for date functions
+        YEAR(CAST(saledate AS DATE)) AS year,
+        MONTH(CAST(saledate AS DATE)) AS month,
+        DAY(CAST(saledate AS DATE)) AS day,
+        MONTHNAME(CAST(saledate AS DATE)) AS month_name,
+        QUARTER(CAST(saledate AS DATE)) AS quarter
         -- Add more date attributes as needed (e.g., day_of_week, week_of_year, is_weekend)
     FROM raw_dates
     QUALIFY ROW_NUMBER() OVER (PARTITION BY saledate ORDER BY saledate) = 1 -- Ensure unique dates
