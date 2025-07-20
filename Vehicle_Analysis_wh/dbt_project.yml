@@ -35,3 +35,5 @@ models:
     staging:
       +materialized: view
     # All models directly under 'models/gold/' will be materialized as tables
+    gold:
+      +materialized: table

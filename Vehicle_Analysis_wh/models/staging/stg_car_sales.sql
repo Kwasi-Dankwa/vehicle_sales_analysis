@@ -24,15 +24,14 @@ WITH base_data AS (
         mmr,
         sellingprice,
 
-        -- Step 1: Extracted the first 15 characters: "Tue Dec 16 2014"
-        -- Step 2: Converted to DATE
-        TRY_TO_DATE(SUBSTR(saledate, 1, 15), 'DY MON DD YYYY') AS saledate_date
+        -- Extract just 'Dec 16 2014' from 'Tue Dec 16 2014 00:00:00 GMT+0000 (UTC)'
+        TRY_TO_DATE(SUBSTR(saledate, 5, 11), 'MON DD YYYY') AS saledate_date
 
     FROM {{ source('cardb', 'car_sales') }}
     WHERE vin IS NOT NULL AND make IS NOT NULL
 ),
 
--- retains unique vin by keeping the most recent saledate--
+-- Retain only the most recent entry per VIN
 deduped_data AS (
     SELECT *
     FROM (
@@ -60,11 +59,7 @@ SELECT
     mmr,
     sellingprice,
 
-    -- Format as 'YYYY/MM/DD'
-    TO_CHAR(saledate_date, 'YYYY/MM/DD') AS saledate
+    -- Final cleaned saledate as a DATE type
+    saledate_date AS saledate
 
 FROM deduped_data
-
-
-
-
