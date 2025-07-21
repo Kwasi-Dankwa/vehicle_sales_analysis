@@ -47,20 +47,23 @@ The warehouse follows a **star schema** design:
 
 ---
 
-## 🏗 Architecture: Medallion Layers
+## 🏗️ Architecture
 
-| Layer  | Description |
-|--------|-------------|
-| **Bronze** | Raw ingested CSV data `car_prices.csv` |
-| **Silver** | Cleaned & normalized data (deduplicated VINs, valid sale dates) |
-| **Gold** | Business-ready tables with surrogate keys, calculated fields, and star schema modeling |
+This project follows a simplified **Medallion-style architecture** adapted for dbt and Snowflake:
+
+| Layer | Folder      | Description |
+|-------|-------------|-------------|
+| Silver | `models/staging/` | Cleans raw CSV data during load (fixes nulls, deduplicates VINs, formats sale dates) |
+| Gold   | `models/gold/`    | Star schema for analytics (fact + dimension tables) |
+
+> dbt pipeline started at the Silver layer
 
 ---
 
-## ⚙️ ETL Workflow with dbt
+## ⚙️ ELT Workflow with dbt
 
-- `stg_car_prices`: Raw staging model (Bronze)
-- `clean_car_prices`: Cleansed Silver model
+- `car_prices.csv`: Raw data loaded into Snowflake table (Bronze)
+- `stg_car_sales.sql`: Silver stage
 - `dim_vehicle`, `dim_seller`, `dim_date`, `fact_car_sales`: Gold-layer models
 
 All transformations are **declarative** and **version-controlled** using dbt, with automated tests (e.g. not-null, uniqueness) and dependency tracking via `ref()`.
