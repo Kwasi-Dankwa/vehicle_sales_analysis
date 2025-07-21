@@ -26,7 +26,7 @@ The purpose of this data warehouse is to consolidate, organize, and optimize veh
 | **dbt**       | Transformation layer — modeling, testing, and documentation |
 | **Git/GitHub**| Version control and collaboration |
 | **VS Code**   | Development environment |
-| **Kaggle Dataset** | Source data containing detailed car sales records |
+| **[`Kaggle Dataset`](https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data)**| Source data containing detailed car sales records |
 
 ---
 
@@ -56,6 +56,9 @@ This project follows a simplified **Medallion-style architecture** adapted for d
 | Silver | `models/staging/` | Cleans raw CSV data during load (fixes nulls, deduplicates VINs, formats sale dates) |
 | Gold   | `models/gold/`    | Star schema for analytics (fact + dimension tables) |
 
+### Diagram
+![Diagram](snapshots/architectureflow.png "Arhitecture")
+
 > dbt pipeline started at the Silver layer
 
 ---
@@ -67,17 +70,6 @@ This project follows a simplified **Medallion-style architecture** adapted for d
 - `dim_vehicle`, `dim_seller`, `dim_date`, `fact_car_sales`: Gold-layer models
 
 All transformations are **declarative** and **version-controlled** using dbt, with automated tests (e.g. not-null, uniqueness) and dependency tracking via `ref()`.
-
----
-
-## 📈 Future Enhancements
-
-- Add dbt docs and data lineage diagrams
-- Integrate Snowflake’s native tasks & streams for incremental loading
-- Build Tableau or Streamlit dashboard for real-time insights
-- Schedule automated runs via dbt Cloud or Airflow
-
----
 
 ## 📂 Folder Structure
 ``` Vehicle_Analysis_wh/
@@ -95,6 +87,17 @@ All transformations are **declarative** and **version-controlled** using dbt, wi
 ├── dbt_project.yml # Main dbt project config
 ```
 > This project uses dbt’s recommended directory structure for model organization
+
+---
+
+## 📈 Future Enhancements
+
+- Add dbt docs and data lineage diagrams
+- Integrate Snowflake’s native tasks & streams for incremental loading
+- Build Tableau or Streamlit dashboard for real-time insights
+- Schedule automated runs via dbt Cloud or Airflow
+
+---
 
 
 
