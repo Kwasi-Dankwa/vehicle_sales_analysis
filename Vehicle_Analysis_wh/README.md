@@ -14,7 +14,7 @@ This project is a modern revamp of my original SQL Server-based vehicle sales an
 
 ## 📌 Project Purpose
 
-The goal is to support **data-driven insights** into vehicle sales trends, seller performance, and market value benchmarking — especially for use cases like **auto insurers** adjusting premiums based on real-world resale trends.
+The purpose of this data warehouse is to consolidate, organize, and optimize vehicle sales data from to support data-driven decision-making across sales, operations, and business strategy. It enables historical analysis, trend forecasting, **data-driven insights** and performance benchmarking related to vehicle sales, sellers, pricing, and market value (MMR) primarily especially for **Auto insurers** who may use vehicle condition, age, and sales data to improve claims valuation or adjust premiums based on real-world resale value trends
 
 ---
 
@@ -41,6 +41,9 @@ The warehouse follows a **star schema** design:
 - `dim_vehicle`: Unique vehicles by VIN
 - `dim_seller`: Distinct seller profiles
 - `dim_date`: Calendar date dimension for temporal analysis
+
+### Diagram
+![Relationship](snapshots/starschema.png "Relationship")
 
 ---
 
