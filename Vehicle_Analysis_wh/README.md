@@ -99,6 +99,60 @@ All transformations are **declarative** and **version-controlled** using dbt, wi
 
 ---
 
+## 🚀 How to Run This Project Locally
+---
+### 🧱 Prerequisites
+
+- Python 3.7+
+- dbt (Snowflake adapter):  
+  Install with pip  
+  ```bash
+  pip install dbt-snowflake
+---
+### Clone repo
+```
+git clone https://github.com/Kwasi-Dankwa/vehicle_sales_analysis.git
+cd vehicle_sales_analysis
+git checkout snowflake-dbt
+```
+- Set up profiles.yml
+Example
+```
+vehicle_analysis_wh:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: <your_account>  # e.g., ab12345.us-east-1
+      user: <your_user>
+      password: <your_password>
+      role: <your_role>        # e.g., ACCOUNTADMIN
+      warehouse: <your_warehouse>
+      database: <your_database>
+      schema: <your_schema>
+
+```
+---
+### Run Project
+```
+dbt debug         # Test connection
+dbt deps          # Install dependencies (if any)
+dbt seed          # Optional: if you're using CSV seeds
+dbt run           # Build all models
+dbt test          # Run data quality tests
+```
+---
+
+### Generate and View docs
+```
+dbt docs generate
+dbt docs serve
+```
+
+
+
+
+
 
 
 
